@@ -125,7 +125,8 @@ gulp.task('vendors', ['vendors-css', 'vendors-js'])
 //Observa todo y refresca el navegador
 gulp.task('watch', function() {
   browserSync.init({
-   proxy: 'localhost/wp_foodietour',
+   //coloca aquí la url de tu proyecto local
+   //proxy: 'your project url',
    server: false,
   })
   gulp.watch('./assets/css/src/**/*.scss', ['sass'])
