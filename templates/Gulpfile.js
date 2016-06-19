@@ -122,6 +122,17 @@ gulp.task('php-sync', phpSync)
 //compile vendors'js and sass 
 gulp.task('vendors', ['vendors-css', 'vendors-js'])
 
+//Observa todo y refresca el navegador
+gulp.task('watch', function() {
+  browserSync.init({
+   proxy: 'localhost/wp_foodietour',
+   server: false,
+  })
+  gulp.watch('./assets/css/src/**/*.scss', ['sass'])
+  gulp.watch('./assets/js/src/**/*.js', ['scripts']).on('change', browserSync.reload)
+  gulp.watch('./**/*.php').on('change', browserSync.reload)
+})
+
 //Observa y hace cambios en el archivo llamado
 gulp.task('default', function () {
     gulp.watch('./assets/css/src/*.scss', ['sass'])
