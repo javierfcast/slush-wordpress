@@ -8,6 +8,7 @@ var jshint = require('gulp-jshint')
 var rsync = require('gulp-rsync')
 var clone = require('gulp-clone')
 var rename = require('gulp-rename')
+var browserSync = require('browser-sync').create();
 var env = require('./env.json') 
 
 //compila los vendors js en un solo archivo
@@ -62,6 +63,7 @@ gulp.task('sass', function () {
                 file.basename = file.basename + '.min'
             }))
             .pipe(gulp.dest('./assets/css'))
+            .pipe(browserSync.stream())
 })
 
 //compile vendors and sync with the server

@@ -11,6 +11,7 @@
   ],
   "author": "<%= authorName %>",
   "devDependencies": {
+    "browser-sync": "^2.11.2",
     "gulp": "^3.9.0",
     "gulp-clone": "^1.0.0",
     "gulp-concat": "^2.6.0",
